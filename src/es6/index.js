@@ -122,3 +122,47 @@ const helloPromise = () => {
 helloPromise()
 .then(response => console.log(response))
 .catch(error => console.log(error));
+
+//---------
+//clases
+class Calculator{
+    constructor(){
+        this.valorA = 0;
+        this.valorB = 0;
+    }
+
+    //metodos
+    sum(valueA, valueB) {
+        this.valorA=valueA;
+        this.valorB=valueB;
+        return this.valorA+this.valorB;
+    }
+}
+
+const calc = new Calculator();
+console.log(calc.sum(2,2));
+
+//----------
+//modulos -> module.js
+const hello = require('./module.js');
+
+console.log(hello());
+
+
+//---------
+//generadores: funcion especial que retorna unos valores definidos
+function* helloworld(){
+    if(true){
+        yield 'Hello, ';
+    }if(true){
+        yield 'World';
+    }
+};
+
+const generatorHello = helloworld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+
+
+
